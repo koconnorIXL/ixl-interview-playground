@@ -9,7 +9,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', routes.index);
-app.get('/getGraph', routes.loadGraph);
 
 var server = app.listen(3000, function () {
   
