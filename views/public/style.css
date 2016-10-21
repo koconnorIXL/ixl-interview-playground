@@ -1,0 +1,39 @@
+.node.ptg {
+  fill: aliceblue;
+  stroke: cornflowerblue;
+}
+
+.node.qm {
+  fill: coral;
+  stroke: chocolate;
+}
+
+.node.gc {
+  fill: lightpink;
+  stroke: darksalmon;
+}
+
+.link {
+  fill: none;
+  stroke: red;
+  stroke-width: 1px;
+}
+
+.currentInfo {
+  display: table;
+  background-color: cornsilk;
+}
+
+.currentInfo div {
+  display: table-row;
+}
+
+.currentInfo div div {
+  display: table-cell;
+}
+
+.currentInfo div .entry {
+  min-width: 100px;
+  padding-left: 15px;
+}
+
