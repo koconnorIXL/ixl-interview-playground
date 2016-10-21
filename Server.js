@@ -1,6 +1,6 @@
-//Lets require/import the HTTP module
 var http = require('http');
 var dispatcher = require('httpdispatcher');
+var fs = require('fs');
 
 //Lets define a port we want to listen to
 const PORT=8080; 
@@ -31,8 +31,11 @@ dispatcher.setStatic('resources');
 
 // GET the main page
 dispatcher.onGet("/", function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('HELLO');
+  fs.readFile('index.html',function (err, data){
+    res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
+    res.write(data);
+    res.end();
+  });
 });
 
 //A sample POST request
