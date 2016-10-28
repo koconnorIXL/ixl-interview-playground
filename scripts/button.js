@@ -14,12 +14,31 @@ button2.innerHTML = "Two";
 button2.className = "question-button";
 container.appendChild(button2);
 
+var guess = [];
 var buttons = document.getElementsByClassName('question-button');
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function(btnNum) {
     return function() {
-      console.log(btnNum);
+      guess.push(btnNum);
+      console.log(guess);
     }
   }(i));
+}
+
+var submitButton = document.querySelector('.submit-button');
+submitButton.onclick = function() {
+  var http = new XMLHttpRequest();
+  var url = "/guess";
+  var params = guess.join('');
+  http.open("POST", url, true);
+  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  http.onreadystatechange = function() {
+    if(http.readyState == 4 && http.status == 200) {
+        alert(http.responseText);
+        document.querySelector('.result').innerHTML = http.responseText;
+    }
+  }
+  http.send(params);
+  guess = [];
 }
 
