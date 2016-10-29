@@ -9,6 +9,7 @@ app.use(express.static(path.join(__dirname, '/scripts')));
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', routes.index);
+app.get('/load', routes.loadQ);
 app.post('/guess', routes.grader);
 
 var server = app.listen(3000, function () {

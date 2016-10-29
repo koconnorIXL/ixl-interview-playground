@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    each sheetURL in pageInfo.css
+      link(rel='stylesheet', href=sheetURL)
+    link(rel='stylesheet', href='style.css')
+  body
+    h1 IXL Playground
+    div.question-content
+    button.submit-button Submit
+    div.result
+
+    each scriptURL in pageInfo.js
+      script(src=scriptURL)
