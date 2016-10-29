@@ -2,3 +2,8 @@
   display: inline-block;
   border: 1px solid black;
 }
+
+.submit-button {
+  display: block;
+  margin: 10px auto;
+}

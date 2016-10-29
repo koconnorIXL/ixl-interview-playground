@@ -1,5 +1,7 @@
 // https://jsfiddle.net/oLe1jtfL/1/
 
+var prompt = document.querySelector('.prompt');
+prompt.innerHTML = "Press the buttons in the order to generate the sequence '012'";
 var container = document.querySelector('.question-content');
 var button0 = document.createElement("BUTTON");
 button0.innerHTML = "Zero";
@@ -17,12 +19,10 @@ container.appendChild(button2);
 var guess = [];
 var buttons = document.getElementsByClassName('question-button');
 for (var i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener('click', function(btnNum) {
-    return function() {
-      guess.push(btnNum);
-      console.log(guess);
-    }
-  }(i));
+  buttons[i].addEventListener('click', function() {
+    guess.push(i);
+    console.log(guess);
+  });
 }
 
 var submitButton = document.querySelector('.submit-button');

@@ -1,13 +1,11 @@
 doctype html
 html
   head
-    link(rel='stylesheet', href='button.css')
-    link(rel='stylesheet', href='style.css')
+    link(rel='stylesheet', href='index.css')
     script(src="http://d3js.org/d3.v3.min.js")
   body
-    h1 IXL Playground
-    div.question-content
-    button.submit-button Submit
-    div.result
+    h1 IXL Interview Playground
+    h2 Challenges
+    a(href="/load?qType=button").question-link Buttons And Closure
+    a.question-link.another-question Some Different Question
 
-    script(src="/button.js")

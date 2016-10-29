@@ -6,9 +6,12 @@ html
     link(rel='stylesheet', href='style.css')
   body
     h1 IXL Playground
+    div.prompt
     div.question-content
     button.submit-button Submit
     div.result
+
+    a(href="/").back-button Back To Menu
 
     each scriptURL in pageInfo.js
       script(src=scriptURL)
